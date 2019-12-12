@@ -1,15 +1,48 @@
 digraph SQA_qualification_description_summary{
 ratio = "auto"
+# core information about the qualification
 "sqa:48604" -> "National 3 Physics" [label="dc:title"];
 "sqa:48604" -> "National 3 Physics  develop an understanding"  [label="dc:description"];
 "sqa:48604" -> "http://www.sqa.org.uk"   [label="dc:publisher"];
 "sqa:48604" -> "3" [label="sqa:scqfLevel"];
+"sqa:48604" -> "sqaQualType:NQ" [label="sqa:qualificationType"];
+"sqa:48604" -> "sqaQualLevel:N3" [label="sqa:qualificationLevel"];
+"sqa:48604" -> "sqaSubject:48604" [label="sqa:subject"];
+"sqa:48604" -> "sqaQualCode:C75773" [label="sqa:qualificationCode"];
+"sqa:48604" -> "sqa:RA" [label="sqa:superclass"];
+
+"sqa:RA" -> "sqa:R" [label="sqa:superclass"];
+
+# labels for superclasses
+"sqa:RA" -> "Science" [label="rdfs:label"];
+"sqa:R" -> "Science and Mathematics" [label="rdfs:label"];
+
+# create a sector identifier entity specific for this qualification
 "sqa:48604" -> "sectors:48604" [label="sqa:hasSectors"];
+
+# information about the sectors that the qualification is grouped within
 "sectors:48604" -> "sqaSector:1" [label="sqa:hasSector"];
 "sectors:48604" -> "sqaSector:2" [label="sqa:hasSector"];
 "sectors:48604" -> "sqaSector:3" [label="sqa:hasSector"];
+
+# labels for the sectors
 "sqaSector:1" -> "Power Generation and Renewables" [label="rdfs:label"];
 "sqaSector:2" -> "Science and Maths,Science, Technology" [label="rdfs:label"];
 "sqaSector:3" -> "Engineering and Mathematics" [label="rdfs:label"];
+
+# labels for SQA Qualification Type entities
+"sqaQualType:NQ" -> "National Qualification" [label="skos:prefLabel"];
+"sqaQualType:NQ" -> "NQ" [label="skos:notation"];
+
+
+# labels for SQA Qualification Level entities
+"sqaQualLevel:N3" -> "National 3" [label="skos:prefLabel"];
+"sqaQualLevel:N3" -> "N3" [label="skos:notation"];
+
+# labels for SQA Qualification Subject entities
+"sqaSubject:48604" -> "Physics" [label="skos:prefLabel"];
+
+# label for SQA Qualification Code entities
+"sqaQualCode:C75773" -> "C757 73" [label="skos:prefLabel"];
 
 }
